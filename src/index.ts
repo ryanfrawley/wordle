@@ -27,7 +27,7 @@ function main() {
         (a, b) => b[1] - a[1]
       );
 
-      // Filtering the frequencies to remove letters is usefulfor follow-up guesses.
+      // Filtering the frequencies to remove letters is useful for follow-up guesses.
       const filteredSortedFrequencies = sortedFrequencies.reduce(
         (prev, next) => (!"".includes(next[0]) ? [...prev, next] : prev),
         [] as [string, number][]
