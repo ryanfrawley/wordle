@@ -1,10 +1,5 @@
 import fs from "fs";
 
-interface WordScore {
-  word: string;
-  score: number;
-}
-
 function main() {
   fs.readFile(
     "words_alpha.txt",
