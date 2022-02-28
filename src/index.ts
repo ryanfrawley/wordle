@@ -26,13 +26,14 @@ function main() {
       const sortedFrequencies = Object.entries(letterFrequencies).sort(
         (a, b) => b[1] - a[1]
       );
+
+      // Filtering the frequencies to remove letters is usefulfor follow-up guesses.
       const filteredSortedFrequencies = sortedFrequencies.reduce(
         (prev, next) => (!"".includes(next[0]) ? [...prev, next] : prev),
         [] as [string, number][]
       );
-      const topTen = filteredSortedFrequencies.slice(0, 20);
-      console.log("Top 10 letters by frequency:");
-      console.log(topTen);
+      console.log("Top 20 letters by frequency:");
+      console.log(filteredSortedFrequencies.slice(0, 20));
 
       // Break down each letter by positional frequencies
       const letterPositions: Record<string, Array<number>> = {};
